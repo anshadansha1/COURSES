@@ -33,9 +33,3 @@ function cb2(err,data){
 console.log('Last Line')
 
 
-PS E:\MCA\COURSES\JAVASCRIPT\Js_certification@scalar\Module_8> node Asynchronous.js
-First Line
-Last Line
-File 1 data ->I am file 1
-
-File 2 data ->I am file 2
