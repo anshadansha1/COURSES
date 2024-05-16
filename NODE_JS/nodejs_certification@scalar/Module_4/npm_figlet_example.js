@@ -1,0 +1,1 @@
+const figlet = require('figlet'); //figlet package which we installed is  
