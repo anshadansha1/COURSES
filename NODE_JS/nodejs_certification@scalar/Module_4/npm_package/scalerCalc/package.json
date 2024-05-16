@@ -1,0 +1,12 @@
+{
+  "name": "scalarcalc",
+  "version": "1.0.0",
+  "description": "This is a calculator module developed during node course by scalar topics.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anshad",
+  "license": "ISC"
+}
+
