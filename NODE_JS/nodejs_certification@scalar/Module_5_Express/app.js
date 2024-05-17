@@ -14,6 +14,9 @@ app.get('/',(req , res) =>{
 app.get('/about',(req , res) =>{
     res.send('We create Impact');
 })
+app.get('/contact',(req , res) =>{
+    res.send('Contact us on abcd@gmail.com ');
+})
 
 //Now if you run the code you will not see anything in output .
 //This is bcs you have to Specify the PORT :
