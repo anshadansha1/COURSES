@@ -6,7 +6,7 @@ const app = express();
 
 //Methods : get() , post() , put() ,delete().
 
-//1 app.get() :[To route HTTP GET requests to the specified path]
+//1 app.get() :To READ[To route HTTP GET requests to the specified path]
 app.get('/',(req , res) =>{
     res.send('Hello from Scalar Topics');
 })
