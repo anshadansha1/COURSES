@@ -18,6 +18,9 @@ app.use(express.json());
 app.use(myMiddlewareFunction);
 app.use(myMiddlewareFunction2);
 
+//user third partym middleware-morgan
+app.use(morgan());
+
 //Handling Multiple routes:
 let courses = [ //change const to let for delete
     {id:1 , name : 'JavaScript'},
