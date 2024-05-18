@@ -1,4 +1,4 @@
-//Http post() : .
+//Http delete() : .
 
 //First import Express:
 const express = require('express');
@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json());
 
 //Handling Multiple routes:
-const courses = [
+let courses = [ //change const to let for delete
     {id:1 , name : 'JavaScript'},
     {id:2 , name : 'Java'},
     {id:3 , name : 'Python'},
@@ -42,7 +42,7 @@ app.get('/courses',(req , res) =>{
 })
 //post()
 //Whenever we are  using post(whenever we need to create data),when we are using Express you have pass to JSON
-//To pass you need to use a Middleware.
+//To pass you need to use a Middleware(Here we used JSON).
 app.post('/courses' , (req , res) =>{
     const course = {
         id : courses.length +1,
@@ -69,6 +69,22 @@ app.get('/courses/:coursename',(req , res) =>{
    
     //To handle Error when specific course is not there.
     if(!course) res.status(404).send('The course you are looking for does not exist')
+    res.send(course);
+})
+
+//4 .app.delete() : To Delete
+// app.delete('/courses/:coursename',(req , res)=>{
+//     let UpdatedCourses = courses.filter(course => course.name !== req.params.coursename);
+//     courses = UpdatedCourses;
+//     res.send(courses);
+// })
+//DELETE using id :
+app.delete('/courses/:id',(req , res)=>{
+    let course = courses.find(course => course.id !== req.params.id); //Finds the particular course with id.
+    if(!course) res.status(404).send('The course you are looking for does not exist');//if not found
+
+    const index = courses.indexOf(course);//To find the index .
+    courses.splice(index , 1);//To delete that index from array.
     res.send(course);
 })
 
