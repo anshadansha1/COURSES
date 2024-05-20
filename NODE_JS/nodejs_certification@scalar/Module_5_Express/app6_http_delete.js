@@ -56,7 +56,7 @@ app.post('/courses' , (req , res) =>{
 //used to update already existing entries.
 app.put('/courses/:coursename', (req , res)=> {
     let course = courses.find(course => course.name === req.params.coursename);
-     if(!course) res.status(404).send('The course you are looking for does not exist');
+     if(!course) return res.status(404).send('The course you are looking for does not exist');
 
      course.name = req.body.name;//whatever the name we give in body in postman will update above courses array object.
      res.send(course);
