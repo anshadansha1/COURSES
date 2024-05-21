@@ -18,13 +18,13 @@ const Category = mongoose.model('Category' , categorySchema);//'Category' is mod
 
 
 //GET: 
-router.get('/api/categories',async (req , res ) => {
+router.get('/',async (req , res ) => {
     let categories = await Category.find();//finds data from database
     res.send(categories);
 });
 
 //POST :Create
-router.post('/api/categories',async (req , res ) => {
+router.post('/',async (req , res ) => {
 
     const {error} = validateData(req.body)
     if(error) res.send(400).send(error.details[0].message)
@@ -35,7 +35,7 @@ router.post('/api/categories',async (req , res ) => {
     res.send(category);
 });
 // //PUT : Update
-router.put('/api/categories/:id', async (req , res)=> {
+router.put('/:id', async (req , res)=> {
     //validation part:
     const {error} = validateData(req.body)
     if(error) res.send(400).send(error.details[0].message)
@@ -46,7 +46,7 @@ router.put('/api/categories/:id', async (req , res)=> {
 })
 
 //DELETE : delete
-router.delete('/api/categories/:id', async (req , res)=>{
+router.delete('/:id', async (req , res)=>{
 
     const category = await Category.findByIdAndDelete(req.params.id)//category with passed id will be deleted here
     if(!category) return res.status(404).send('The genre with the given ID was not found.');
@@ -54,7 +54,7 @@ router.delete('/api/categories/:id', async (req , res)=>{
     res.send(category);
 })
 
-router.get('/api/categories/:id', async (req , res)=> {
+router.get('/:id', async (req , res)=> {
     const category = await  Category.findById(req.params.id)//Finds the particular course with id.
      if(!category) return res.status(404).send('The category with given ID was not found');
      res.send(category);

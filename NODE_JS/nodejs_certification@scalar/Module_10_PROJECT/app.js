@@ -1,7 +1,9 @@
 
 const express = require('express');//Importing express.
 
-const categories = require("./Routes/categories")
+const categories = require("./Routes/categories")//importing categories from Routes folder
+
+const students = require("./Routes/students")//import students from Routes folder
 
 const app = express();//calling express.
 
@@ -12,8 +14,8 @@ mongoose.connect('mongodb://127.0.0.1/learningPlatform') //To connect to DB.(The
 
 
 app.use(express.json()); // Middleware to parse JSON bodies.
-app.use(categories);
-
+app.use('/api/categories',categories);
+app.use('/api/students',students);
 
 //ENVIRONMENT VARIABLE - for PORTs 
 const port = process.env.PORT || 3000//for static 
