@@ -1,26 +1,7 @@
 const express = require('express');//Importing express.
+const {Student , validate} =require('../models/studentsModel');//imporing the ones exported from 'studentsModel' 
+
 const router = express.Router();//setting route
-const mongoose = require('mongoose');//import mongoose
-const Joi = require('joi');//import joi
-
-//Create a schema:
-const studentSchema = new mongoose.Schema({
-    name : {type : String , required : true , minlength : 3 , maxlength : 30 } ,
-    isEnrolled : {
-        type : Boolean,
-        default : false
-    },
-    
-    Phone :{
-        type : String,
-        required : true,
-        minlength : 10 ,
-        maxlength : 25
-    }
-})
-//Create a Model :
-const Student = mongoose.model('Student' , studentSchema);//'Student' is model based on schema 'studentSchema' .
-
 
 
 //GET: 
@@ -32,7 +13,7 @@ router.get('/',async (req , res ) => {
 //POST :Create
 router.post('/',async (req , res ) => {
 
-    const {error} = validateData(req.body)
+    const {error} = validate(req.body)
     if(error) res.send(400).send(error.details[0].message)
     const student = new Student({
         name : req.body.name,
@@ -45,7 +26,7 @@ router.post('/',async (req , res ) => {
 // //PUT : Update
 router.put('/:id', async (req , res)=> {
     //validation part:
-    const {error} = validateData(req.body)
+    const {error} = validate(req.body)
     if(error) res.send(400).send(error.details[0].message)
     //Updating by id in DB:
     const student = await  Student.findByIdAndUpdate(req.params.id , {name : req.body.name , Phone : req.body.Phone , isEnrolled : req.body.isEnrolled} ,{new : true})
@@ -68,15 +49,5 @@ router.get('/:id', async (req , res)=> {
      res.send(student);
 })
 
-//VALIDATION PART
-function validateData(student){
-    const schema = {
-        name : Joi.string().min(3).max(50).required(), //name should be with min length 3 and max 50
-        Phone : Joi.string().min(10).max(50).required(),
-        isEnrolled : Joi.boolean()
-    }
-
-    return Joi.validate(student , schema);
-}
 
 module.exports = router ;//exporting router

@@ -1,19 +1,9 @@
 
 const express = require('express');//Importing express.
 
+const {Category , validate} =require('../models/categoriesModel');//imporing the ones exported from 'categoriesModel' 
+
 const router = express.Router();//setting route
-
-const mongoose = require('mongoose');//import mongoose
-
-
-const Joi = require('joi');//import joi
-
-//Create a schema:
-const categorySchema = new mongoose.Schema({
-    name : {type : String , required : true , minlength : 3 , maxlength : 30 }  
-})
-//Create a Model :
-const Category = mongoose.model('Category' , categorySchema);//'Category' is model based on schema 'categorySchema' .
 
 
 
@@ -26,7 +16,7 @@ router.get('/',async (req , res ) => {
 //POST :Create
 router.post('/',async (req , res ) => {
 
-    const {error} = validateData(req.body)
+    const {error} = validate(req.body)
     if(error) res.send(400).send(error.details[0].message)
     const category = new Category({
         name : req.body.name
@@ -37,7 +27,7 @@ router.post('/',async (req , res ) => {
 // //PUT : Update
 router.put('/:id', async (req , res)=> {
     //validation part:
-    const {error} = validateData(req.body)
+    const {error} = validate(req.body)
     if(error) res.send(400).send(error.details[0].message)
     //Updating by id in DB:
     const category = await  Category.findByIdAndUpdate(req.params.id , {name : req.body.name} ,{new : true})
@@ -60,13 +50,5 @@ router.get('/:id', async (req , res)=> {
      res.send(category);
 })
 
-//VALIDATION PART
-function validateData(category){
-    const schema = {
-        name : Joi.string().min(3).required() //name should be with min length 3
-    }
-
-    return Joi.validate(category , schema);
-}
 
 module.exports = router ;//exporting router
