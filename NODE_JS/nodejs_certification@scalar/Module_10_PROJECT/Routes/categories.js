@@ -16,25 +16,22 @@ const categorySchema = new mongoose.schema({
 const Category = new  mongoose.model('Category' , categorySchema);//'Category' is model based on schema 'categorySchema' .
 
 
-const categories = [
-    {id:1 , name : 'Web'},
-    {id:2 , name : 'Mobile'},
-    {id:3 , name : 'Photography'},
-]
+
 //GET: 
-router.get('/api/categories',(req , res ) => {
+router.get('/api/categories',async (req , res ) => {
+    let categories = await Category.find();//finds data from database
     res.send(categories);
 });
+
 //POST :Create
-router.post('/api/categories',(req , res ) => {
+router.post('/api/categories',async (req , res ) => {
 
     const {error} = validateData(req.body)
     if(error) res.send(400).send(error.details[0].message)
-    const category = {
-        id : categories.length+1, //new id (3+1=4)
-        name : req.body.name //Whatever the name we pass as req in postman body>raw it will be set as the name field of categories array
-    };
-    categories.push(category);
+    const category = new Category({
+        name : req.body.name
+})
+    await Category.save();
     res.send(category);
 });
 //PUT : Update
