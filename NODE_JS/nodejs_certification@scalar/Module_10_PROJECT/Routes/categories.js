@@ -9,11 +9,11 @@ const mongoose = require('mongoose');//import mongoose
 const Joi = require('joi');//import joi
 
 //Create a schema:
-const categorySchema = new mongoose.schema({
+const categorySchema = new mongoose.Schema({
     name : {type : String , required : true , minlength : 3 , maxlength : 30 }  
 })
 //Create a Model :
-const Category = new  mongoose.model('Category' , categorySchema);//'Category' is model based on schema 'categorySchema' .
+const Category = mongoose.model('Category' , categorySchema);//'Category' is model based on schema 'categorySchema' .
 
 
 
@@ -31,33 +31,32 @@ router.post('/api/categories',async (req , res ) => {
     const category = new Category({
         name : req.body.name
 })
-    await Category.save();
+    await category.save();
     res.send(category);
 });
-//PUT : Update
-router.put('/api/categories/:id', (req , res)=> {
-    const category = categories.find(c => c.id === parseInt(req.params.id));//Finds the particular course with id.
+// //PUT : Update
+router.put('/api/categories/:id', async (req , res)=> {
+    //validation part:
+    const {error} = validateData(req.body)
+    if(error) res.send(400).send(error.details[0].message)
+    //Updating by id in DB:
+    const category = await  Category.findByIdAndUpdate(req.params.id , {name : req.body.name} ,{new : true})
      if(!category) return res.status(404).send('The category with given ID was not found');
-
-    //  if(error) return res.status(400).send(error.details[0].message);
-
-     category.name = req.body.name;//Updating name
      res.send(category);
 })
 
 //DELETE : delete
-router.delete('/api/categories/:id',(req , res)=>{
-    const  category = categories.find(c => c.id === parseInt(req.params.id)); //Finds the particular course with id.
+router.delete('/api/categories/:id', async (req , res)=>{
+
+    const category = await Category.findByIdAndDelete(req.params.id)//category with passed id will be deleted here
     if(!category) return res.status(404).send('The genre with the given ID was not found.');
 
-    const index = categories.indexOf(category);//To find the index .
-    categories.splice(index , 1);//To delete that index from array.
     res.send(category);
 })
 
-router.get('/api/categories/:id', (req , res)=> {
-    const category = categories.find(c => c.id === parseInt(req.params.id));//Finds the particular course with id.
-     if(!category) return res.status(404).send('The genre with given ID was not found');
+router.get('/api/categories/:id', async (req , res)=> {
+    const category = await  Category.findById(req.params.id)//Finds the particular course with id.
+     if(!category) return res.status(404).send('The category with given ID was not found');
      res.send(category);
 })
 
