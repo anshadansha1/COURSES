@@ -1,7 +1,7 @@
 const express = require('express');//Importing express.
 const {Course , validate} = require('../models/coursesModel');//imporing the ones exported from 'coursesModel' 
 //import category to get category while entering student details:
-const {Category , validate} = require('../models/categoriesModel'); 
+const {Category } = require('../models/categoriesModel'); 
 
 const router = express.Router();//setting route
 
@@ -39,8 +39,8 @@ router.put('/:id', async (req , res)=> {
     //validation part:
     const {error} = validate(req.body)
     if(error) res.send(400).send(error.details[0].message)
-
-    //First find category by id from Category
+        
+//First find category by id from Category
     const category = await Category.findById(request.body.categoryId)
     if(!category) return res.status(400).send('Invalid ID ');
 

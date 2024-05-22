@@ -43,4 +43,4 @@ function validateCourse(course){
 
 //exporting to 'courses.js'
 exports.Course = Course;
-exports.validate = validateCourse;
+// exports.validateCourses = validateCourse;
