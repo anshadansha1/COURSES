@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+
+  <body>
     <div id="root">
-        <h1>Hello from HTML!</h1>
+      <h1>Hello from HTML!</h1>
     </div>
 
     <!-- <script>
@@ -18,6 +19,19 @@
         root.appendChild(message);//message appended to div with id "root"
     </script> -->
 
-    
-</body>
+    <!--REACT - CDN Links-->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+
+    <!--First React code-->
+    <script>
+        const message = React.createElement('h1',{},'Hello From React.');
+    </script>
+  </body>
 </html>
