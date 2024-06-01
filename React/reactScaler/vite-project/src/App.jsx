@@ -1,7 +1,7 @@
-
+import Hello from './components/Hello'
 function App() {
   return (
-    <h1>Hello From React</h1>
+    <Hello/> //Here we  use the component 'Hello' which is imported. 
   )
 }
 
