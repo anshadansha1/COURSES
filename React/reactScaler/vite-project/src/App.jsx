@@ -2,6 +2,7 @@ import Hello from './components/Hello'
 import Bye from './components/Bye'
 import Hello2  from './components/Hello2'
 import Animals from './components/Animals'
+import Fruits from './components/Fruits'
 function App() {
   return (
     <>
@@ -13,6 +14,8 @@ function App() {
     <Hello2 name = 'Majo' phone='124853325'/>
 
     <Animals/>
+
+    <Fruits/>
     </>
   )
 }
