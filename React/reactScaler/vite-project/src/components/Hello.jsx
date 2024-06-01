@@ -1,4 +1,4 @@
-function Hello(props){
+function Hello(){
     
     let text ='Valorant'
 
@@ -10,9 +10,7 @@ function Hello(props){
         <>
         <h2>Hello from hello Component {10+20}</h2>
         <h2>Hello from hello Component {text}</h2>
-        <h2>Hello from hello Component {dispName()}</h2><br>
-        </br>
-        <h2>Hello Anshad</h2>
+        <h2>Hello from hello Component {dispName()}</h2>
         </>
         
     )
