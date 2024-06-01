@@ -1,7 +1,11 @@
 import Hello from './components/Hello'
+import Bye from './components/Bye'
 function App() {
   return (
-    <Hello/> //Here we  use the component 'Hello' which is imported. 
+    <>
+    <Hello/> 
+    <Bye/>
+    </>
   )
 }
 
