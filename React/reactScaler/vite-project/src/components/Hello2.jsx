@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Hello2(props) {
+function Hello2({name , phone}) {
   return (
-    <h1>Hello {props.name} {props.phone}</h1>
+    <h1>Hello {name} {phone}</h1>
   )
 }
 
