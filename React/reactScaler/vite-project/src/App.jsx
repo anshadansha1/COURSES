@@ -3,10 +3,11 @@ import Bye from './components/Bye'
 import Hello2  from './components/Hello2'
 import Animals from './components/Animals'
 import Fruits from './components/Fruits'
+import Message from './components/Message'
 function App() {
   return (
     <>
-    <Hello/> 
+    {/* <Hello/> 
     <Bye/>
 
     <Hello2 name = 'Anshad' phone='8154564223'/>
@@ -15,7 +16,9 @@ function App() {
 
     <Animals/>
 
-    <Fruits/>
+    <Fruits/> */}
+
+    <Message/>
     </>
   )
 }
