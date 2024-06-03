@@ -5,6 +5,8 @@ import Animals from './components/Animals'
 import Fruits from './components/Fruits'
 import Message from './components/Message'
 import Counter from './components/Counter'
+import Form from './components/Form'
+
 function App() {
   return (
     <>
@@ -19,9 +21,11 @@ function App() {
 
     <Fruits/>
 
-    <Message/> */}
-    
-    <Counter/>
+    <Message/>
+
+    <Counter/> */}
+
+    <Form/>
     </>
   )
 }
