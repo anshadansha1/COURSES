@@ -4,6 +4,7 @@ import Hello2  from './components/Hello2'
 import Animals from './components/Animals'
 import Fruits from './components/Fruits'
 import Message from './components/Message'
+import Counter from './components/Counter'
 function App() {
   return (
     <>
@@ -16,9 +17,11 @@ function App() {
 
     <Animals/>
 
-    <Fruits/> */}
+    <Fruits/>
 
-    <Message/>
+    <Message/> */}
+    
+    <Counter/>
     </>
   )
 }
