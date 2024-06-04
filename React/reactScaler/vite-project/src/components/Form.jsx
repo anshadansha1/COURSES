@@ -2,13 +2,13 @@ import React , {useState} from 'react'
 
 function Form() {
 
-    const [text , setText] = useState('')
+    const [name , setText] = useState('')
 
 
   return (
     <div>
       <form>
-        <input onChange={(e)=>setText(e.target.value)} type="text" value = {text}/>
+        <input onChange={(e)=>setName(e.target.value)} type="text" value = {text}/>
         <h1>{text}</h1>
       </form>
     </div>
