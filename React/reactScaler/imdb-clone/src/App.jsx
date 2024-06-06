@@ -6,7 +6,10 @@ import Navbar from "./components/Navbar";
 import Movies from "./components/Movies";
 import WatchList from "./components/WatchList";
 
+
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Banner from "./components/Banner";
 
 function App() {
   return (
@@ -15,7 +18,8 @@ function App() {
         <Navbar />
 
         <Routes>
-          <Route path="/" element={<Movies />} />
+          <Route path="/" element={ <> <Banner/> <Movies /> </>} />
+
           <Route path="/watchlist" element={<WatchList />} />
         </Routes>
       </BrowserRouter>
