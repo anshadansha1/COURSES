@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import MovieCard from './MovieCard'
 import axios from 'axios'
+import Pagination from './Pagination'
 
 function Movies() {
   const [movies ,setMovies] = useState([])
@@ -24,6 +25,8 @@ function Movies() {
         })}
 
       </div>
+
+      <Pagination/>
     </div>
   )
 }
