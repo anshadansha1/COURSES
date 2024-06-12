@@ -1,0 +1,15 @@
+E:\MCA\COURSES\C#\C#COURSE\bin\Debug\net8.0\C#COURSE.exe
+E:\MCA\COURSES\C#\C#COURSE\bin\Debug\net8.0\C#COURSE.deps.json
+E:\MCA\COURSES\C#\C#COURSE\bin\Debug\net8.0\C#COURSE.runtimeconfig.json
+E:\MCA\COURSES\C#\C#COURSE\bin\Debug\net8.0\C#COURSE.dll
+E:\MCA\COURSES\C#\C#COURSE\bin\Debug\net8.0\C#COURSE.pdb
+E:\MCA\COURSES\C#\C#COURSE\obj\Debug\net8.0\C#COURSE.GeneratedMSBuildEditorConfig.editorconfig
+E:\MCA\COURSES\C#\C#COURSE\obj\Debug\net8.0\C#COURSE.AssemblyInfoInputs.cache
+E:\MCA\COURSES\C#\C#COURSE\obj\Debug\net8.0\C#COURSE.AssemblyInfo.cs
+E:\MCA\COURSES\C#\C#COURSE\obj\Debug\net8.0\C#COURSE.csproj.CoreCompileInputs.cache
+E:\MCA\COURSES\C#\C#COURSE\obj\Debug\net8.0\C#COURSE.sourcelink.json
+E:\MCA\COURSES\C#\C#COURSE\obj\Debug\net8.0\C#COURSE.dll
+E:\MCA\COURSES\C#\C#COURSE\obj\Debug\net8.0\refint\C#COURSE.dll
+E:\MCA\COURSES\C#\C#COURSE\obj\Debug\net8.0\C#COURSE.pdb
+E:\MCA\COURSES\C#\C#COURSE\obj\Debug\net8.0\C#COURSE.genruntimeconfig.cache
+E:\MCA\COURSES\C#\C#COURSE\obj\Debug\net8.0\ref\C#COURSE.dll
