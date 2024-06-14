@@ -22,13 +22,23 @@ function App() {
     setWacthList(newWatchList)
     console.log(newWatchList)
   }
+
+  //Function to hanlde remove from watchlist
+  let handleRemoveFromWatchlist = (movieObj)=>{
+    let filteredWatchlist = watchlist.filter((movie)=>{
+      return movie.id != movieObj.id
+    })
+    setWacthList(filteredWatchlist)
+    console.log(filteredWatchlist)
+  }
   return (
     <>
       <BrowserRouter>
         <Navbar />
 
         <Routes>
-          <Route path="/" element={ <> <Banner/> <Movies handleAddtoWatchlist={handleAddtoWatchlist} /> </>} />
+          <Route path="/" element={ <> <Banner/> <Movies handleAddtoWatchlist={handleAddtoWatchlist}
+          handleRemoveFromWatchlist={handleRemoveFromWatchlist} watchlist = {watchlist}/> </>} />
 
           <Route path="/watchlist" element={<WatchList />} />
         </Routes>
