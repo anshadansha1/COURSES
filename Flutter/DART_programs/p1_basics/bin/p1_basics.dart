@@ -38,44 +38,71 @@ void main(){
   // print(myname.length);
 
   
-  //4.List - act as ARRAY
+  // //4.List - act as ARRAY
   
-  List<int> numberList = [55,24,17,62]; //List
-  List<int> listToAdd = [0,1,2];
+  // List<int> numberList = [55,24,17,62]; //List
+  // List<int> listToAdd = [0,1,2];
   
-  var dynamic_list = ['Anshad',24,81.52];  //Dynamic List
-
-  
-
-  //4.1:Find length of List
-  print(numberList.length);
-
-  //4.2:To find Element in a List use 'contains()' property :
-  if(numberList.contains(55)){
-    print('List contains 55');
-  }
-  else{
-    print('List doesnt contains 55');
-  }
-
-  //4.3:To Add an element to List :
-  numberList.add(90);
-
-  //4.4:To Remove an element from List :
-  numberList.removeAt(0); //remove element by index
-  numberList.removeLast(); //removes last element of list
-
-  //4.5: To Add list of elements to a list 
-  numberList.addAll(listToAdd);
-
-  //4.6: Print
-  print(numberList);
-  print(numberList.join( " - ")); //Print uing seperator
+  // var dynamic_list = ['Anshad',24,81.52];  //Dynamic List
 
   
+
+  // //4.1:Find length of List
+  // print(numberList.length);
+
+  // //4.2:To find Element in a List use 'contains()' property :
+  // if(numberList.contains(55)){
+  //   print('List contains 55');
+  // }
+  // else{
+  //   print('List doesnt contains 55');
+  // }
+
+  // //4.3:To Add an element to List :
+  // numberList.add(90);
+
+  // //4.4:To Remove an element from List :
+  // numberList.removeAt(0); //remove element by index
+  // numberList.removeLast(); //removes last element of list
+
+  // //4.5: To Add list of elements to a list 
+  // numberList.addAll(listToAdd);
+
+  // //4.6: Print
+  // print(numberList);
+  // print(numberList.join( " - ")); //Print uing seperator
+
+  // //4.7 : Nested List
+
+  // List<List<int>> nestedList = [
+  //   [1,2,3],
+  //   [4,5,6],
+  //   [7,8,9]
+  // ];
+
+  // print(nestedList);
+  // print(nestedList[0][1]);
+
+
+  //5.LIST VS SET
+  List<int> numberList2 = [1,1,1,2,2,3,5,8,8,8,9];
+  Set<int> numberSet = {1,1,1,2,2,3,5,8,8,8,9}; //SET does not support Duplicate values
+
+  print(numberList2);
+  print(numberSet);
+
+  //6.MAP - act as Dictionary
+  Map<String,String> map1 = {
+    "name" : "Anshad",
+    "place" : "wayanad"
+  };
+
+  var dynamicMap = {
+    "name" : "Anshad Muhammad",
+    "age" : 24
+  };
+
+  print(map1["name"]);
+  print(dynamicMap["age"]);
   
-
-
-
-
 }
