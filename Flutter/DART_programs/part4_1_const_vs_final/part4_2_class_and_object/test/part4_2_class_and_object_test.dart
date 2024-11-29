@@ -1,4 +1,4 @@
-import 'package:part4_class_object/part4_class_object.dart';
+import 'package:part4_2_class_and_object/part4_2_class_and_object.dart';
 import 'package:test/test.dart';
 
 void main() {
